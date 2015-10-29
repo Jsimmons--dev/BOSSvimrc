@@ -19,9 +19,16 @@ Plugin 'isRuslan/vim-es6'
 
 call vundle#end()
 
+"change directory open command
+nnoremap <leader>e :Ex<cr>
 nnoremap <leader>j :J<cr>
 nnoremap <leader>r :set relativenumber!<cr> 
 filetype plugin indent on
-nnoremap <leader>ff :%!js-beautify -j -q -B -f -<CR>
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>f :%!js-beautify -j -q -B --good-stuff -f -<CR>
+nnoremap <leader>s <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+"open color scheme
+let colors = "mango"
+nnoremap <leader>co <C-w><C-v><C-l>:e ~/.vim/colors/mango.vim<cr>
 autocmd bufwritepost .vimrc source ~/.vimrc
+
